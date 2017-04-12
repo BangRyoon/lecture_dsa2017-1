@@ -1,4 +1,4 @@
-#define _GNU_SOURCE	//
+#define _GNU_SOURCE	
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<string.h>
@@ -74,12 +74,9 @@ int main(void){
 	printf("Scissor = 1, Rock = 2, Paper = 3 \n");
 	printf("\n");
 
-	int k;
-	for (k = 0; k < team_num; k++) {
-		selection(team_A, teamA, team_num);
-		selection(team_B, teamB, team_num);
-	}
-
+	selection(team_A, teamA, team_num);
+	selection(team_B, teamB, team_num);
+	
 	printInfoA(team_A);
 	printInfoB(team_B);
 
@@ -165,5 +162,4 @@ int main(void){
 	free(team_B);
 	system("pause");
 	return 0;
-
 }
