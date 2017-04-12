@@ -26,9 +26,9 @@ int getWeapon(int weapon) {
 		return weapon;
 }
 
-void selection(teamate man[], char name[], int num){
+void selection(teamate man[], char name[], int num) {
 	int i;
-	for (i = 0; i < num; i++){
+	for (i = 0; i < num; i++) {
 		man[i].teamname = name;
 		man[i].id = i + 1;
 		man[i].weapon = (rand() % 3) + 1;
@@ -49,7 +49,7 @@ void printInfoB(teamate man[]) {
 		printf("Team name : %s  ID : %d weapon : 0 Life : %d\n", man[i].teamname, man[i].id, man[i].life);
 	printf("\n");
 }
-int main(void){
+int main(void) {
 	teamate *team_A, *team_B;
 	srand(time(NULL));
 
@@ -76,7 +76,7 @@ int main(void){
 
 	selection(team_A, teamA, team_num);
 	selection(team_B, teamB, team_num);
-	
+
 	printInfoA(team_A);
 	printInfoB(team_B);
 
@@ -86,10 +86,7 @@ int main(void){
 		if (j > team_num + 1 || j < 1)
 			continue;
 		j = j - 1;
-		if (team_B[j].life == 0)
-			continue;
-		else 
-			break;
+		break;
 	} while (1);
 
 	do {
